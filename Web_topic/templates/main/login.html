@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 網站初始化&標題定義 -->
+	<title>情緒監控-登入介面</title>
+<link rel="icon" href="/static/images/web_images/1607931345.ico" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="format-detection" content="telephone = no" />
+	<meta name="keywords"  content="專題討論" />
+	<meta name="description" content="" />
+	
+	<!-- 快捷 & 收藏 圖標宣告 -->
+		<!--
+		<link 	rel="shortcut icon" 
+				href="" 
+				type="image/x-icon" />
+						
+		<link 	rel="Bookmark" 
+				href="" />
+		-->
+
+	<!-- CSS引用宣告 -->
+
+	<link href="/static/CSS/Box.css" rel="stylesheet" type="text/css" /><!--框架-->
+	<link href="/static/CSS/font.css" rel="stylesheet" type="text/css" /><!--字體形-->
+
+
+	<!-- Js引用宣告 -->
+	<script type="text/javascript" language="javascript" src="/static/JS/jquery.js"></script>
+</head>
+
+<body>
+	<!-- 頂部Box -->
+	<header class="Box-Top_Index">
+
+			<!-- Top功能欄 -->
+			<div class="Box-Top_mainContance">
+	
+				<div class="Box-mainContance_Function-Logo_box">
+				</div>
+	
+				<div class="Box-mainContance_Function-Link_box" id="Box-mainContance_Function-LinkA">
+					<span style="top:0px;
+								 left: 0px;
+								 position: absolute;">功能A</span>
+				</div>
+	
+				<div class="Box-mainContance_Function-Link_box" id="Box-mainContance_Function-LinkB"
+					 style="top:0px">
+					<span style="top:0px;
+								 left: 0px;
+								 position: absolute;">功能B</span>
+				</div>
+	
+				<div class="Box-mainContance_Function-Link_box" id="Box-mainContance_Function-LinkC"
+					 style="top:-30px">
+					<span style="top:0px;
+								 left: 0px;
+								 position: absolute;">功能C</span>
+				</div>
+	
+				<div class="Box-mainContance_Function-Link_box" id="Box-mainContance_Function-LinkD"
+					 style="top:-60px">
+					<span style="top:0px;
+								 left: 0px;
+								 position: absolute;">功能D</span>
+				</div>
+	
+			</div>
+	
+			
+	
+		</header>
+
+	<!-- 整體Box -->
+	<div class = "Box-Body">
+			
+		<!-- 主體內容 -->
+		<div class="Box-mainContance">
+
+			<!--主體背景-->
+			<div class="box-mainContance_imgBox"
+				 style="text-align:center;">
+				<img src="/static/images/web_images/pink_classical_hand_drawn_landscape_979789.jpg"
+					 id="box-mainContance_background-image">
+			</div>
+
+			<!-- 內容_LR -->
+			<div class="Box-mainContance_LR-box"
+				 id="Box-main_height">
+		
+				<!--背景圖-->
+				<div style="top: 100px;
+							left: 40px;
+							position: relative;">
+					<img src="/static/images/web_images/blue_background_919872.jpg"
+						 id="Box-LoginBox-IMG">
+				</div>
+
+				<!--登入框-->	
+				<div class="Box-mainContance-LoginBox">
+
+					<p class="Font-LoginBox"
+					style="top:100px;
+							position: relative;">Sign in</p>
+
+<!--用戶登入---------------------------------------------------------------------------------->
+					
+				<br><br><!--BUG：待消去後重新排版調適-->
+
+					<form style="display: inline" method="post" action="" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+						<div class="Box-mainContance-LoginBox-Form"
+							id="Box-LoginBox-Form_UserName">
+
+							<!--帳號輸入欄位-->
+                            {{ form.username }}
+                            {% if form.username.help_text %}
+                                <p>{{ form.username.help_text|safe }}</p>
+                            {% endif %}
+{#							<input 	type="text"#}
+{#									name="account" #}
+{#									placeholder="Username"#}
+{#									class="Box-InputBox">#}
+						
+						</div>
+						
+						<div class="Box-mainContance-LoginBox-Form"
+							id="Box-LoginBox-Form_PassWord">
+
+							<!--密碼輸入欄位-->
+                            {{ form.password }}
+                            {% if form.username.help_text %}
+                                <p>{{ form.password.help_text|safe }}</p>
+                            {% endif %}
+
+{#							<input 	type="password" #}
+{#									name="password"#}
+{#									placeholder="Password"#}
+{#									class="Box-InputBox">#}
+						</div>
+
+						<div class="Box-LoginBox-Form_LoginButton-Location_Login">
+
+							<!--登入按鈕-->
+							<input type="submit" 
+									value="Login"
+									class="Login_Buttom">
+						</div>
+					</form>
+
+					<div class="Box-mainContance-LoginBox_CreateBox">
+						<div class="Box-mainContance-LoginBox_LinkBox"
+							id="Box-mainContance-LoginBox_CreateAccount">
+							<p class="Font-CreateNewCount">
+								<a 	href="{% url 'main:rigister' %}"
+									target="_self" 
+									style=" text-decoration:none;
+											color:blue;">Create account</a><!--連結位置待更新-->
+							</p>
+						</div>
+
+						<div class="Box-mainContance-LoginBox_LinkBox"
+							id="Box-mainContance-LoginBox_ForgotPassword">
+							<p class="Font-ForgotPW">
+								<a 	href="FoundPassword.html" 
+									target="_self" 
+									style=" text-decoration:none;
+											color:blue;">Forgot Password?</a><!--連結位置待更新-->
+							</p>
+						</div>
+					</div>
+
+					<div class="Box-mainContance-LoginBox_Registered">
+						<div class="Box-mainContance-LoginBox-Request">
+							<p class="Font-request">testing: Q&A requestion</p>
+						</div>
+					</div>
+
+				
+
+<!--END of Login----------------------------------------------------------------------------->
+				</div><!--End of 登入框-->
+
+				<div class="Box-mainContance-LoginBox-Shadow"></div>
+				
+			</div>
+
+		</div>
+		
+
+		<!--底部功能-->
+		<div class="Box-Bottom">	
+			<!--回饋&功能欄-->
+			<div class="Box-Bottom_Index">
+				<div class="Box-Bottom_mainContance">
+					
+					<div class="Box-Bottom_mainContance-Box"
+						 id="Box-Bottom_mainContance-Box_Location-A">
+
+						<div class="Box-Bottom-mainContance-text_Top-value">
+							<p class="Font-Bottom_information">Functions</p>
+						</div>
+						
+						<div class="Box-Bottom-mainContance-textContance_Top-value">
+							<p class="Font-Bottom_information-box">Func A</p>
+							<p class="Font-Bottom_information-box">Func B</p>
+							<p class="Font-Bottom_information-box">Func C</p>
+						</div>
+
+					</div>
+
+					<div class="Box-Bottom_mainContance-Box"
+						 id="Box-Bottom_mainContance-Box_Location-B">
+
+						<div class="Box-Bottom-mainContance-text_Top-value">
+							<p class="Font-Bottom_information">About Us</p>
+						</div>
+
+						<div class="Box-Bottom-mainContance-textContance_Top-value">
+							<p class="Font-Bottom_information-box">四方狂想曲</p>
+						</div>
+
+					</div>
+
+					<div class="Box-Bottom_mainContance-Box"
+						 id="Box-Bottom_mainContance-Box_Location-C">
+
+						<div class="Box-Bottom-mainContance-text_Top-value">
+							<p class="Font-Bottom_information">Support</p>
+						</div>
+
+						<div class="Box-Bottom-mainContance-textContance_Top-value">
+							<p class="Font-Bottom_information-box">Problems</p>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+			
+			<!--版權欄-->
+			<div class="Box-Bottom_CopyRight">
+				<div class="Box-Bottom_CopyRight-Box">
+					<p class="Font-CopyRight">COPYRIGHT（C）2019-2020</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	
+	
+</body>
+</html>

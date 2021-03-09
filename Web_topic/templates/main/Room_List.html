@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 網站初始化&標題定義 -->
+	<title>情緒監控-Emotion_List</title>
+    <link rel="icon" href="/static/images/web_images/1607931345.ico" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="format-detection" content="telephone = no" />
+	<meta name="keywords"  content="專題討論" />
+	<meta name="description" content="情緒監控小尖兵" />
+	
+	<!-- 快捷 & 收藏 圖標宣告 -->
+		<!--
+		<link 	rel="shortcut icon" 
+				href="" 
+				type="image/x-icon" />
+						
+		<link 	rel="Bookmark" 
+				href="" />
+		-->
+
+	<!-- CSS引用宣告 -->
+
+	<link href="/static/CSS/Box.css" rel="stylesheet" type="text/css" /><!--框架-->
+	<link href="/static/CSS/Font.css" rel="stylesheet" type="text/css" /><!--字體形-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/css/tagsinput.css" />
+	<!-- Js引用宣告 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script><!--移動效果-->
+
+
+    <script>
+        window.onload = function (){
+            var ctx = document.getElementById('weekChart').getContext('2d');
+            var week_list = {{ week_list|safe }};
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+
+                    labels: ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'neutral'],
+                    datasets: [{
+                        label: 'Past 7 days of Emotion Votes',
+                        data: week_list,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(192, 192, 192, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(192, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+
+                options: {
+                    scales: {
+
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: '樣本數',
+
+                            },
+                            ticks: {
+
+                                beginAtZero: true,
+                                userCallback: function (label, index, labels){
+                                                if(Math.floor(label)===label)
+                                                {
+                                                    return label;
+                                                }
+                                            }
+                            }
+                        }]
+                    }
+                }
+            });
+            Chart.defaults.global.defaultFontSize = 20;
+        }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/static/js/tagsinput.js"></script>
+    <script>
+    $("#post-form").submit(function(e){
+        e.preventDefault();
+        });</script>
+</head>
+
+<body>
+	
+	<!-- 整體Box -->
+	<div class="Emotion-mainContance-Home">
+
+
+
+		<!--右側Box-->
+		<div class="Box-RightContance-Home"><!--右側主體定義-->
+			<div class="Box-RightContance-Home_CenterBox"><!--固定內容版面&置中-->
+
+				<!--頂部Top-->
+				<div class="Box-RightContance-Home_Top"
+					 id="Box-RightContance-Home_Top">
+
+					<!--搜索欄-->
+
+					
+					<div style="top:60px;
+								left:1250px; 
+								position:absolute;">
+								<a href="{% url 'main:user-page'%}"
+								   style="text-decoration:none;">
+									<span style="font-family:Arial; 
+												 font-size: 20px;
+													color : rgb(160, 160, 160);">Back
+									</span>
+								</a>
+					</div>
+
+					<!--設置選項按鈕-->
+					<div class="Box-RightContance-Home_SettingButton"
+						 style="background-image: url('img/SettingButtonIMG.png');
+						 		background-size:100% 100%;"></div>
+
+				</div>
+
+				<!--水平分割線-->
+				<div class="Box-hr" id="Box-hrA"></div>
+				
+				<!--分組標題box-->
+				<div class="Box-RightContance-Home_Title"
+					 id="Box-RightContance-Home_TitleA">
+
+					<!--標題A-->
+					<span class="Font-Home-Title">EMOTION LIST</span>
+					<span	class="Font-Home-Title"
+							style="font-size:50px;
+								   top:13px;
+								   left:250px;"> > </span>
+
+					<!--最新&熱門按鈕-->
+
+					<!--最新組別-->
+					<div class="Box-RightContance-Home_shortCut"
+						 id="Box-RightContance-Home_shortCut-NewGroup"
+						 style="background-image: url('img/NewGroup.png');
+								 background-size:100% 100%;"></div>
+
+					<!--熱門組別-->
+					<div class="Box-RightContance-Home_shortCut"
+						 id="Box-RightContance-Home_shortCut-HotGroup"
+						 style="background-image: url('img/HotGroup.png');
+								background-size:100% 100%;"></div>
+
+				</div>
+
+				<!--主要內容A-Box -->
+				<div class="Box-RightContance-Group"
+					 id="Box-RightContance-GroupA">
+
+			<!--1號房間Start-->		
+					<!--ContanceA-->
+                    <div>
+                    <canvas id="dayChart" height="200" width="600"></canvas>
+                    <script>
+                        var ctx = document.getElementById('dayChart').getContext('2d');
+                        var day_list = {{ day_list|safe }};
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+
+                            data: {
+                                labels: ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'neutral'],
+                                datasets: [{
+
+                                    label: 'Day of Emotion Votes',
+
+                                    data: day_list,
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)',
+                                        'rgba(192, 192, 192, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)',
+                                        'rgba(192, 192, 192, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }],
+
+                            },
+
+                            options: {
+
+                                scales: {
+                                    yAxes: [{
+                                        scaleLabel: {
+                                            display: true,
+                                            
+                                            labelString: '樣本數',
+                                        },
+                                        ticks: {
+                                            beginAtZero: true,
+                                            userCallback: function (label, index, labels){
+                                                if(Math.floor(label)===label)
+                                                {
+                                                    return label;
+                                                }
+                                            }
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                    </script>
+                    </div>
+                    {#					<div class="Box-RoomList-MainBox"#}
+{#						 id="Box-RoomList-MainBoxA">#}
+{#						<!--TitleA-->#}
+{#						<div class="Box-RoomList-Title">#}
+{#						    <span class="Font-RoomList-Title">#}
+{#								A#}
+{#							</span>#}
+{#                            #}
+{##}
+{#						</div>#}
+{##}
+{#						<div class="Box-RoomList-Setting">#}
+{#							<span class="Font-RoomList-Data">#}
+{#								B#}
+{#							</span>#}
+{#						</div>#}
+{##}
+{#						<div class="Box-RoomList-Data">#}
+{#							<span class="Font-RoomList-Setting">#}
+{#                                C#}
+{#							</span>#}
+{#						</div>#}
+{##}
+
+{##}
+{##}
+{#					</div>#}
+{#                    <div class="Box-hr" id="Box-hrC"></div>#}
+			<!--1號房間End-->			
+
+
+
+            <!--2號房間-->
+                    <div style="top: 100px; position: relative;">
+                    <canvas id="weekChart" height="200" width="600"></canvas>
+                    </div>
+                    <div class="Room_Box-hr" id="Box-hrD"></div>
+                    <div class="Room_Box-hr" id="Box-hrE"></div>
+
+
+                    <!--評價系統-->
+                    <div style="top:250px; position:relative;">
+                    <div class="container pt-5">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="title" placeholder="Add title">
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea type="text" class="form-control" name="description" placeholder="Add description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Tags</label>
+                                <input type="text" data-role="tagsinput" class="form-control" name="tags">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        <p>Common Tags:
+                        {% for mt in common_tags %}
+                            <a href="{% url 'main:tagged' pk mt %}" class="badge badge-success">{{mt}}</a>
+                        {% endfor %}
+                        </p>
+                        <div class="row mb-2 posts">
+                            {% for post in posts %}
+                            <div class="col-md-6">
+                                <div class="cards">
+                                    <div class="row no-gutters border rounded  flex-md-row mb-4 shadow-sm h-md-250">
+                                        <div class="col p-4 d-flex flex-column position-static">
+                                            <h3 class="my-1"><a href="{% url 'main:detail' pk post.slug %}">{{post.title}}</a></h3>
+                                            <div style="display:flex">
+                                                {% for tag in post.tags.all %}
+                                                <a href="{% url 'main:tagged' pk tag.slug %}" class="mr-1 badge badge-info">#{{ tag }}</a>
+                                                {% endfor %}
+                                            </div>
+                                            <p class="mb-auto">{{post.description}}</p>
+                                            <p class="mb-auto text-muted">{{post.published}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    </div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	
+	
+</body>
+</html>

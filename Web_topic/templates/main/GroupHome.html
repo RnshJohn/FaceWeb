@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 網站初始化&標題定義 -->
+	<title>情緒監控-群組介面</title>
+    <link rel="icon" href="/static/images/web_images/1607931345.ico" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="format-detection" content="telephone = no" />
+	<meta name="keywords"  content="專題討論" />
+	<meta name="description" content="" />
+
+
+
+	<!-- 快捷 & 收藏 圖標宣告 -->
+		<!--
+		<link 	rel="shortcut icon" 
+				href="" 
+				type="image/x-icon" />
+						
+		<link 	rel="Bookmark" 
+				href="" />
+		-->
+
+	<!-- CSS引用宣告 -->
+
+	<link href="/static/CSS/Box.css" rel="stylesheet" type="text/css" /><!--框架-->
+	<link href="/static/CSS/Font.css" rel="stylesheet" type="text/css" /><!--字體形-->
+
+
+	<!-- Js引用宣告 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script><!--移動效果-->
+	<script type="text/javascript" language="javascript" src="/static/JS/Move.js"></script><!--移動座標-->
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+    </script>
+
+    <script type="text/javascript">
+
+        const csrftoken = getCookie('csrftoken');
+
+        window.onload = function (){
+            var ids = ['Box-RightContance-Group-FuncA','Box-RightContance-Group-FuncB', 'Box-RightContance-Group-FuncC', 'Box-RightContance-Group-FuncD', 'Box-RightContance-Group-FuncE', 'Box-RightContance-Group-FuncF'];
+
+            var customers = {{ all_customers|safe }};
+            var pic = {{ customer_pic|safe }};
+            for(var i=0; i<{{ nums }}; i++){
+
+                var main = document.getElementById("Box-RightContance-GroupA");
+
+                var createDiv = document.createElement("div");
+                createDiv.className = 'Box-RightContance-Group-Func';
+                createDiv.id = ids[i];
+
+                main.appendChild(createDiv);
+
+                {#create child div#}
+                var div2 = document.createElement('div');
+                div2.className ="Box-RightContance-Group-Photo";
+                var pic_url = "url(/static123)"
+
+                div2.style.backgroundImage = pic_url.replace(123, pic[i]);
+                div2.style.backgroundSize = "100% 100%";
+                div2.style.webkitBorderTopLeftRadius = "10px";
+                div2.style.webkitBorderTopRightRadius = "10px";
+                createDiv.appendChild(div2);
+
+                var div3 = document.createElement('div');
+                div3.className = "Box-RightContance-Group-TitleBox";
+                var span1 = document.createElement('span');
+                {#span1.class = "Font-Box-RightContance-Group-TitleBox";#}
+                span1.style.textAlign = "center";
+                span1.style.fontFamily = "Arial";
+                span1.style.fontSize = "30px";
+                span1.style.color = "sienna";
+                span1.style.fontWeight = "normal";
+                span1.style.fontStyle = "normal";
+                span1.innerText = customers[i];
+                div3.appendChild(span1);
+                createDiv.appendChild(div3);
+
+                var div4 = document.createElement('div');
+                div4.className = "Box-RightContance-Group-ContanceBox";
+                var span2 = document.createElement("span");
+                span2.class = "Font-Box-RightContance-Group-ContanceBox";
+                span2.innerText = "下面";
+                div4.appendChild(span2);
+                createDiv.appendChild(div4);
+
+                var link1= document.createElement('a');
+                link1.className = "Box-RightContance-Group-Func";
+                link1.style.top = "0px";
+                var url = "{% url 'main:emotion-page' 123%}";
+                link1.href = url.replace('123', customers[i]);
+                createDiv.appendChild(link1);
+            }
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+	
+	<!-- 整體Box -->
+	<div class="Box-mainContance-Home">
+
+{#		<!--左側Box 已加入的組別-->#}
+{#		<div class="Box-LeftContance-Home">#}
+{#			<!--Logo-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube1">#}
+{#				 <div class="Box-LeftContance-Home_Logo"#}
+{#				 	  style="background-image: url('img/Our.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--紅點提示-->#}
+{#			<div class="Box-RedDot"#}
+{#				 id="Box-RedDotA"></div>#}
+{#			#}
+{#			<div class="Box-RedDot"#}
+{#				 id="Box-RedDotB"></div>#}
+{##}
+{#			<!--組別1-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube2">#}
+{#				 <div class="Box-LeftContance-Home_JoinInGroup"#}
+{#				 	  style="background-image: url('img/Group_Basketball.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--組別2-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube3">#}
+{#				 <div class="Box-LeftContance-Home_JoinInGroup"#}
+{#				 	  style="background-image: url('img/Group_Volleyball.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--組別3-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube4">#}
+{#				 <div class="Box-LeftContance-Home_JoinInGroup"#}
+{#				 	  style="background-image: url('img/Group_Tree.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--組別6-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube5">#}
+{#				 <div class="Box-LeftContance-Home_JoinInGroup"#}
+{#				 	  style="background-image: url('img/Group_Book.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--組別5-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube6">#}
+{#				 <div class="Box-LeftContance-Home_JoinInGroup"#}
+{#				 	  style="background-image: url('img/Group_Pen.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--組別6-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube7">#}
+{#				 groupF#}
+{#			</div>#}
+{##}
+{#			<!--組別7-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube8">#}
+{#				 groupA#}
+{#			</div>#}
+{##}
+{#		</div>#}
+
+		<!--右側Box-->
+		<div class="Box-RightContance-Home"><!--右側主體定義-->
+			<div class="Box-RightContance-Home_CenterBox"><!--固定內容版面&置中-->
+
+				<!--頂部Top-->
+				<div class="Box-RightContance-Home_Top"
+					 id="Box-RightContance-Home_Top">
+
+					<!--搜索欄-->
+					<div class="searchBox">
+						<form name="searchgroup" method="post" action="" enctype="multipart/form-data">
+							{% csrf_token %}
+                            <!--輸入欄-->
+							<input style="width: 300px; height: 50px; top: 17px; position: absolute;" type="text" placeholder="   Search Group Name or ID to join in" name="groupname"
+								style=" width: 300px;
+										height:20px;
+										top:5px;
+										left: 0px;
+										position:absolute;">
+							<!--按鈕 -->
+							<button type="submit" name ="search" class ="button"
+									style="
+										top: 17px;
+										left: 320px;
+										position:absolute;">submit</button>
+						</form>
+
+					</div>
+                    <div style="top: 16px;
+				              left: 570px;
+				              position: absolute;
+				              font-size: x-large;
+				              width: 120px;
+				              height: 40px;">
+                        <a class="button"
+                       href="{% url 'main:user-page' %}">Home</a>
+                    </div>
+
+					<!--設置選項按鈕-->
+                   	<div style="display: block;
+                                position: absolute;
+                                top: 46px;
+                                left: 787px;
+                                transform: translate(-50%, -50%);">
+                         <a href="{% url 'main:add-group' %}" class="button">ADD-GROUP</a>
+                    </div>
+
+					<!--profile按鈕-->
+                    <div style="top: 16px;
+				              left: 875px;
+				              position: absolute;
+				              font-size: x-large;
+				              width: 120px;
+				              text-decoration: none;
+				              height: 40px;">
+                        <a class="button"
+                       href="{% url 'main:profile_update' %}"> Hi~{{ user.username }}</a>
+                    </div>
+
+{#                    登出按鈕#}
+                     <div style="top: 16px;
+				              left: 1062px;
+				              position: absolute;
+				              font-size: x-large;
+				              width: 180px;
+				              height: 40px;">
+                         <a href="{% url 'main:logout' %}" class="button">LOG-OUT</a>
+                    </div>
+
+                    <img class="Box-RightContance-Home_SettingButton"
+                         src="/static{{ image.image.url }}" style="background-size: 100% 100%; border-radius: 50%;">
+
+				</div>
+
+				<!--水平分割線-->
+				<div class="Box-hr" id="Box-hrA"></div>
+				
+				<!--分組標題box-->
+				<div class="Box-RightContance-Home_Title"
+					 id="Box-RightContance-Home_TitleA">
+
+					<!--標題A-->
+					<span class="Font-Home-Title">GROUP PAGE</span>
+					<span	class="Font-Home-Title"
+							style="font-size:50px;
+								   top:13px;
+								   left:200px;"> > </span>
+
+					<!--最新&熱門按鈕-->
+
+					<!--最新組別-->
+					<div class="Box-RightContance-Home_shortCut"
+						 id="Box-RightContance-Home_shortCut-NewGroup"
+						 style="background-image: url('img/NewGroup.png');
+								 background-size:100% 100%;"></div>
+
+					<!--熱門組別-->
+					<div class="Box-RightContance-Home_shortCut"
+						 id="Box-RightContance-Home_shortCut-HotGroup"
+						 style="background-image: url('img/HotGroup.png');
+								background-size:100% 100%;"></div>
+
+				</div>
+
+				<!--主要內容A-Box -->
+				<div class="Box-RightContance-Group"
+                     id="Box-RightContance-GroupA">
+
+
+                </div>
+
+				<!--水平分割線-->
+				<div class="Box-hr" id="Box-hrB"></div>
+
+				<!--分組標題box-->
+				<div class="Box-RightContance-Home_Title"
+					 id="Box-RightContance-Home_TitleB">
+				<!--標題B-->
+					<span class="Font-Home-Title">GROUP PAGE</span>
+					<span	class="Font-Home-Title"
+							style="font-size:50px;
+									top:13px;
+									left:200px;"> > </span>
+
+				</div>
+
+				<div class="Box-RightContance-Group"
+					 id="Box-RightContance-GroupB">
+					<span style="text-align: center;
+								 font-size: 50px;">More Information, Stay tuned！</span>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	
+	
+</body>
+</html>

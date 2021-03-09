@@ -1,0 +1,744 @@
+
+/*
+ *	style:  以名字定義		.
+ *	   id： 以編號定義		#
+ */
+
+	/*Top*/
+	.Box-Top_Index{
+		width: 100%;
+		height: 90px;
+
+		top: 0px;
+		left: 0px;
+		position: fixed;
+
+		box-shadow:0px 0px 60px rgb(65, 87, 97);
+		
+		background-color: rgb(120, 188, 232); 
+
+		opacity:1; /*頂部菜單透明度*/
+		z-index: 10;
+	}
+
+	.Box-Top_mainContance{
+		width: 1100px;
+		height:100%;
+
+		margin: 0 auto;
+
+		z-index: 11;
+	}
+
+	/*Banner*/
+
+	/*Body*/
+	.Box-Body{
+		width: 100%;
+
+		top: 91px; /*內容起始高度為: .Box-Top_Index -> height(90px) + 1 = 起始高度 91px*/
+		left: 0px;
+		position: absolute;
+
+		background: rgb(255, 255, 255);
+	}/*主題內容定義*/
+
+	.Box-mainContance{
+		width: 100%;
+
+		position: relative;
+
+		margin: 0 auto;/* div-Box 置中*/
+		background-color: rgb(255, 255, 255);	/*主體架構*/
+		z-index: 5;
+	}
+	.box-mainContance_imgBox{
+		width: 100%; /*1644px*/
+		height: 800px;
+
+		position: absolute;
+		z-index:0;
+	}
+	#box-mainContance_background-image{
+		width: 1644px;/*1644px*/
+		height: 100%;
+
+		position: relative;
+
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+
+		opacity:0.8;/* 0.7 */
+
+		box-shadow:0px 0px 60px rgb(65, 87, 97);
+
+	}
+	
+	.Box-mainContance_LR-box{
+		width:1180px;/*580 + 20 + 580*/
+
+		margin: 0 auto;/* div-Box 置中*/
+		background-color: rgb(255, 255, 255);	/*主體置中架構*/
+		z-index: 10;
+	}
+	#Box-main_height{
+		height: 1000px;/*標準800px*/
+	}/*主體架構高度*/
+
+	.Box-mainContance_M-box{
+		width:20px; 
+		float: left;
+		
+		background-color: rgb(243, 192, 192);
+	}
+
+	.Box-main_Box{
+		width: 580px;
+		
+		float: left;
+		background-color: rgb(156, 235, 125);
+	}
+
+
+	#Box-main_Home #Box-mainContance-Home{height: 730px;}
+
+	#Box-LoginBox-IMG{
+		width: 1100px;
+		height: 568px;
+
+		border-radius: 10px 10px 10px 10px;
+
+		box-shadow:-5px -5px 20px rgb(65, 87, 97);
+	}
+
+	.Box-mainContance-LoginBox{
+		width: 420px;
+		height: 620px;
+
+		top:-552px;		/*-502*/
+		left: 670px;	/*670*/
+		position: relative;
+
+		border-top-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+
+		box-shadow:0px -2px 10px rgb(65, 87, 97);
+
+		background-color: rgb(244, 249, 253);
+	}
+	
+	.Box-mainContance-LoginBox-Shadow{
+		width: 0;
+		height: 0;
+		border-bottom: 30px solid rgb(62, 92, 135);
+		border-left: 30px solid transparent;
+
+		top:-1172px;	/*1122*/
+		left:640px;		/*640*/
+		position: relative;
+	}
+
+	.Box-mainContance-LoginBox-Form{
+		width: 100%;
+		height: 50px;
+
+		position: relative;
+	}
+	#Box-LoginBox-Form_UserName{top:70px;}
+	#Box-LoginBox-Form_PassWord{top:100px;}
+
+	.Box-mainContance-LoginBox-Form_Registered{
+		width: 100%;
+		height: 40px;
+
+		position: relative;
+	}
+	#Box-LoginBox-Form-Registered_NickName{top: 0px;}
+	#Box-LoginBox-Form-Registered_IDNumber{top: 20px;}
+	#Box-LoginBox-Form-Registered_Password{top: 40px;}
+	#Box-LoginBox-Form-Registered_RePassword{top: 60px;}
+	#Box-LoginBox-Form-Registered_Email{top: 80px;}
+	#Box-LoginBox-Form-Registered_PhoneNumer{top: 100px;}
+
+
+	#Group-NameBox{left: 0px; top: 0px;}
+	#Group-ImageBox{left: 0px; top: 60px;}
+	#Group-PasswordBox{left: 0px; top: 120px;}
+	#Group-Password1Box{left: 0px; top: 180px;}
+
+	.Box-LoginBox-Form_LoginButton-Location_Login{
+		top: 150px; /*150px*/
+		left: 82px;
+
+		position: relative;
+	}
+	#Box-LoginBox-Form_LoginButton-Location_Registered{
+		top: 140px; /*120px*/
+		left: 70px;
+		position: relative;
+	}
+
+	.Box-mainContance-LoginBox_Registered{
+		width: 100%;
+		height: 50px;
+		border-radius: 0px 0px 10px 10px;
+
+		top: 210px;
+		left: 0px;
+		position: relative;
+
+		background-color: rgb(229, 235, 242);
+	}
+
+	.Box-mainContance-LoginBox_CreateBox{
+		width: 270px;
+		height: 30px;
+
+		top: 145px;
+		left: 70px;
+		position: relative;
+
+	}
+
+	.Box-mainContance-LoginBox_LinkBox{
+		width: 130px;
+		height: 30px;
+
+		position: relative;
+	}
+	#Box-mainContance-LoginBox_CreateAccount{top: 0px;left: 0px;}
+	#Box-mainContance-LoginBox_ForgotPassword{top: -47px;left: 140px;}
+	
+	.Box-mainContance-LoginBox-Request{
+		width: 100%;
+		height: 20px;
+
+		top:12px;
+		position: relative;
+	}
+
+	.Box-mainContance-Login-Request_Msg{
+		width:200px;
+		height: 100%;
+
+		left: 50px;
+		position: relative;
+	}
+	.Box-mainContance-Login-Request_ReturnLogin-Box{
+		width:100px;
+		height: 100%;
+
+		top: -50px;
+		left: 250px;
+		position: relative;
+	}
+
+	/*Bottom*/
+	.Box-Bottom{
+		height: 300px;
+
+		background-color: rgb(0, 0, 0);
+	}
+
+	.Box-Bottom_Index{
+		width: 100%;
+		height: 240px;
+
+		text-align: center;
+
+		background-color: rgb(29, 39, 52);
+		/*background-color: rgb(29, 39, 52);*/
+	}
+
+	.Box-Bottom_CopyRight{
+		width: 100%;
+		height: 60px;
+
+		top:-30px;
+		position: relative;
+
+		background-color: rgb(26, 34, 44);
+	}
+	.Box-Bottom_CopyRight-Box{
+		width: 600px;
+		height: 30px;
+
+		top:20px;
+		left: 490px;
+		position: relative;
+	}
+
+	.Box-Bottom_mainContance{
+		width: 1100px;
+		height: 100%;
+		
+		top: 0px;
+		left: 50%;
+		position: relative;
+
+		margin: 0 0 0 -550px;
+	}
+	.Box-Bottom_mainContance-Box{
+		width: 200px;
+		height: 100%;
+
+		position: relative;
+	}
+	#Box-Bottom_mainContance-Box_Location-A{left: 270px;}
+	#Box-Bottom_mainContance-Box_Location-B{top:-265px; left: 500px;}
+	#Box-Bottom_mainContance-Box_Location-C{top:-530px; left: 730px;}
+
+	.Box-Bottom-mainContance-text_Top-value{
+		top:20px;
+		position: relative;
+	}
+	.Box-Bottom-mainContance-textContance_Top-value{
+		top:20px;
+		position: relative;
+	}
+	
+	/*Functions*/
+
+	.Box-mainContance_Function-Logo_box{
+		width: 150px;
+		height: 100%;
+
+		float: left;
+		background-image: url("/static/images/web_images/cropped-screenshot-3.png");
+		background-size: 100% 100%;
+
+		position: relative;
+		box-shadow: 3px 3px 9px gray;
+		z-index: 20;
+	}
+
+	.Box-mainContance_Function-Link_box{
+		width: 150px;
+		height: 30px;
+
+		top:30px;
+
+		position: relative;
+		z-index: 11;
+	}
+	#Box-mainContance_Function-LinkA{left: 950px;}
+	#Box-mainContance_Function-LinkB{left: 800px;}
+	#Box-mainContance_Function-LinkC{left: 650px;}
+	#Box-mainContance_Function-LinkD{left: 500px;}
+
+
+	.Box-Top_Function-mainContance_box{
+		width:100px;
+		height:100%;
+
+		position: relative;
+
+		background-color:blue;
+		z-index: 11;
+	}
+	#Box-Top_FunctionA{left:500px;}
+	#Box-Top_FunctionB{left:650px; top:-50px}
+	#Box-Top_FunctionC{left:800px; top:-100px;}
+	#Box-Top_FunctionD{left:950px; top:-150px;}
+
+	/*Home*/
+
+	.Box-mainContance-Home{
+		width: 100%;
+		height: 1600px;
+		background-color: rgb(241, 241, 241);
+		z-index: 10;
+	}
+
+	.Emotion-mainContance-Home{
+		width: 100%;
+		height: 2500px;
+		background-color: rgb(241, 241, 241);
+		z-index: 10;
+	}
+
+	.Box-LeftContance-Home{
+		width:100px;
+		height: 100%;
+		background-color:rgb(255, 255, 255);
+		box-shadow:0px -4px 10px rgb(199, 199, 199);
+		position: fixed;
+		z-index: 11;
+	}
+
+	.Box-LeftContance-Home_tableCube{
+		width:100px;
+		height: 109px;
+
+		position: absolute;
+		z-index: 12;
+	}
+	#Box-LeftContance-Home_tableCube1{ top:0px;}
+	#Box-LeftContance-Home_tableCube2{ top:110px;}
+	#Box-LeftContance-Home_tableCube3{ top:220px;}
+	#Box-LeftContance-Home_tableCube4{ top:330px;}
+	#Box-LeftContance-Home_tableCube5{ top:440px;}
+	#Box-LeftContance-Home_tableCube6{ top:550px;}
+	#Box-LeftContance-Home_tableCube7{ top:660px;}
+	#Box-LeftContance-Home_tableCube8{ top:770px;}
+
+		.Box-LeftContance-Home_Logo{
+			width: 80px;
+			height: 80px;
+
+			top: 10px;
+			left: 0px;
+			position: absolute;
+			z-index: 13;
+		}
+
+		.Box-LeftContance-Home_JoinInGroup{
+			width: 60px;
+			height: 60px;
+
+			top: 10px;
+			left: 18px;
+			position: absolute;
+			z-index: 13;
+		}
+
+	.Box-RightContance-Home{
+		width:92%;
+		height: 100%;
+		background-color: rgb(241, 241, 241);
+
+		left:20px;
+		position: absolute;
+		z-index: 11;
+	}
+		.Box-RightContance-Home_CenterBox{/*固定內容版面&置中*/
+			width: 1310px;/*box-hr TitleA需一併修改*/
+			height: 100%;
+			
+			margin: 0 auto;
+
+			background-color: rgb(241, 241, 241);
+			z-index: 12;
+		}
+			.Box-RightContance-Home_Top{/*右側Top*/
+				width: 1310px;
+				height: 80px;
+
+				position: absolute;
+				
+				z-index: 13;
+			}
+			#Box-RightContance-Home_Top{ top: 10px;}
+
+
+
+			.Box-RightContance-Home_SettingButton{
+				width: 45px;
+				height: 45px;
+
+				top: 20px;
+				left: 1250px;
+				position: absolute;
+
+				z-index: 13;
+			}
+
+			.Box-RightContance-Home_Title{/*分類標題A*/
+				width: 1310px;
+				height: 80px;
+
+				position: absolute;
+
+				z-index: 13;
+			}
+			#Box-RightContance-Home_TitleA{ top: 110px;}
+			#Box-RightContance-Home_TitleB{ top: 855px;}
+
+			.Box-RightContance-Home_shortCut{/*hot & new group*/
+				width: 36px;
+				height: 36px;
+
+				top:20px;
+				position: absolute;
+
+				z-index: 13;
+			}
+			#Box-RightContance-Home_shortCut-NewGroup{ left:1274px;}
+			#Box-RightContance-Home_shortCut-HotGroup{ left:1210px;}
+
+			.Box-RightContance-Group{/*分組內容*/
+				width: 1310px;
+				height: 605px;
+
+				position: absolute;
+
+				z-index: 13;
+			}
+			#Box-RightContance-GroupA{ top: 200px}
+			#Box-RightContance-GroupB{ top: 1000px}
+
+				.Box-RightContance-Group-Func{
+					width: 420px;
+					height: 290px;
+
+					border-radius: 10px;
+					box-shadow:0px -2px 10px rgb(199, 199, 199);
+
+					position: absolute;
+					z-index: 14;
+				}
+				#Box-RightContance-Group-FuncA{ top: 0px; left: 0px;}
+				#Box-RightContance-Group-FuncB{ top: 0px; left: 445px;}
+				#Box-RightContance-Group-FuncC{ top: 0px; left: 890px;}
+				#Box-RightContance-Group-FuncD{ top: 315px; left: 0px;}
+				#Box-RightContance-Group-FuncE{ top: 315px; left: 445px;}
+				#Box-RightContance-Group-FuncF{ top: 315px; left: 890px;}
+				
+				.Box-RightContance-Group-Photo{
+					width:420px;
+					height: 180px;
+
+					z-index: 14;
+				}
+
+				.Box-RightContance-Group-TitleBox{
+					width:400px;
+					height: 30px;
+
+					top:190px;
+					left:20px;
+					position: absolute;
+
+					z-index: 14;
+				}
+				.Box-RightContance-Group-ContanceBox{
+					width:390px;
+					height: 50px;
+
+					top:235px;
+					left:20px;
+					position: absolute;
+
+					z-index: 14;
+				}
+
+
+	/*Room List*/
+
+	.Box-RoomList-MainBox{
+		width: 1200px;
+		height: 130px;
+
+		
+		left: 55px;
+		position: absolute;
+	}
+	#myChart{top:150px;}
+	#Box-RoomList-MainBoxA{ top: 150px; }
+	#Box-RoomList-MainBoxB{ top: 450px; }
+	#Box-RoomList-MainBoxC{ top: 750px; }
+	#Box-RoomList-MainBoxD{ top: 1050px; }
+
+		.Box-RoomList-Title{
+			width: 600px;
+			height: 50px;
+
+			top: 20px;
+			left: 20px;
+			position: absolute;
+		}
+
+		.Box-RoomList-Setting{
+			width: 600px;
+			height: 30px;
+
+			top: 80px;
+			left: 20px;
+			position: absolute;
+		}
+
+		.Box-RoomList-Data{
+			width: 550px;
+			height: 30px;
+
+			top: 60px;
+			left: 700px;
+			position: absolute;
+		}
+
+	/*public*/
+	.Box-hr{
+		width:1310px;
+		height: 2px;
+		background-color: rgb(229, 229,229);
+
+		position: absolute;
+	}
+
+	.Room_Box-hr{
+		width:1310px;
+		height: 2px;
+		background-color: rgb(192, 192, 192);
+
+		position: absolute;
+	}
+
+
+	#Box-hrA{ top:100px;}
+	#Box-hrB{ top:845px;}
+	#Box-hrC{ width: 1200px;top:120px;}
+	#Box-hrD{ width: 1300px;top:490px;}
+	#Box-hrE{ width: 1300px;top:1060px;}
+	#Box-hrF{ width: 1200px;top:120px;}
+	
+	.searchBox{
+		width: 380px;
+		height: 40px;
+
+		left:0px;
+		top:0px;
+		position: absolute;
+
+		/*background-color: #3498db;*/
+	}
+
+	.Box-RedDot{
+		width: 12px;
+		height: 12px;
+
+		border-radius: 12px;
+		border-color: rgb(255, 255, 255);
+
+		background-color: #ff0000;
+
+		left:13px;
+		position: absolute;
+
+		z-index:100;
+	}
+	#Box-RedDotA{ top:115px;}
+	#Box-RedDotB{ top:225px;}
+
+
+
+	/*Button*/
+	.Login_Buttom{
+		
+		font-size: 20px;
+		font-family: Georgia, serif;
+		text-decoration: none;
+
+		color: #fcfcfc;
+		background: #3498db;
+
+		border: none;
+		border-radius: 14px;
+		padding: 12px 100px 12px 100px;
+	}
+	  
+	.Login_Buttom:hover{
+		background: #3cb0fd;
+  		text-decoration: none;
+	}
+
+
+	.Box-InputBox{
+		width: 250px;
+		height: 40px;
+
+		padding:5px 15px; 
+		border-radius: 5px; 
+		border:2px rgb(207, 214, 221) solid;
+
+		font-size:15px;
+
+		background:rgb(245, 250, 251); 
+
+		left: 67px;
+		position: relative;
+
+		cursor:pointer;		
+	}
+
+	.Group-InputBox{
+		width: 250px;
+		height: 40px;
+
+		padding:5px 15px;
+		border-radius: 5px;
+		border:2px rgb(207, 214, 221) solid;
+
+		font-size:15px;
+
+		background:rgb(245, 250, 251);
+		position: absolute;
+		left: 0px;
+
+
+		cursor:pointer;
+	}
+	#Box-InputBox_Registered_NickName{height: 25px;}
+	#Box-InputBox_Registered_IDNumber{height: 25px;}
+	#Box-InputBox_Registered_Password{height: 25px;}
+	#Box-InputBox_Registered_RePassword{height: 25px;}
+	#Box-InputBox_Registered_Email{height: 25px;}
+	#Box-InputBox_Registered_Phone{height: 25px;}
+
+
+/*	add group button*/
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+
+.wrapper {
+  display: block;
+  position: absolute;
+  top: 46px;
+  left: 795px;
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  padding: 0.75em 2em;
+  text-align: center;
+  text-decoration: none;
+  color: #272727;
+  border: 2px solid #D0D0D0;
+  font-size: 20px;
+	font-family: 標楷體, serif ;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+
+.button:hover {
+  background-color: #9D9D9D;
+  color: #fff;
+  border-bottom: 4px solid 	#D0D0D0;
+}
+
+.button:hover:before {
+  transform: skewX(-45deg) translateX(13.5em);
+  transition: all 0.5s ease-in-out;
+}

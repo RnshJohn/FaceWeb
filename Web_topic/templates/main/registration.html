@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 網站初始化&標題定義 -->
+	<title>情緒監控-註冊介面</title>
+<link rel="icon" href="/static/images/web_images/1607931345.ico" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="format-detection" content="telephone = no" />
+	<meta name="keywords"  content="專題討論" />
+	<meta name="description" content="" />
+	
+	<!-- 快捷 & 收藏 圖標宣告 -->
+		<!--
+		<link 	rel="shortcut icon" 
+				href="" 
+				type="image/x-icon" />
+						
+		<link 	rel="Bookmark" 
+				href="" />
+		-->
+
+	<!-- CSS引用宣告 -->
+	!--按鈕-->
+	<link href="/static/CSS/Box.css" rel="stylesheet" type="text/css" /><!--框架-->
+	<link href="/static/CSS/Font.css" rel="stylesheet" type="text/css" /><!--字體形-->
+
+
+	<!-- Js引用宣告 -->
+	<script type="text/javascript" language="javascript" src="/static/JS/jquery.js"></script>
+</head>
+
+<body>
+	<!-- 頂部Box -->
+	<header class="Box-Top_Index"
+			style="background-color: rgb(68, 197, 151);">
+
+			<!-- Top功能欄 -->
+			<div class="Box-Top_mainContance">
+	
+				<div class="Box-mainContance_Function-Logo_box">
+
+				</div>
+	
+				<div class="Box-mainContance_Function-Link_box" id="Box-mainContance_Function-LinkA">
+					<span style="top:0px;
+								 left: 0px;
+								 position: absolute;">功能A</span>
+				</div>
+	
+				<div class="Box-mainContance_Function-Link_box" id="Box-mainContance_Function-LinkB"
+					 style="top:0px">
+					<span style="top:0px;
+								 left: 0px;
+								 position: absolute;">功能B</span>
+				</div>
+	
+				<div class="Box-mainContance_Function-Link_box" id="Box-mainContance_Function-LinkC"
+					 style="top:-30px">
+					<span style="top:0px;
+								 left: 0px;
+								 position: absolute;">功能C</span>
+				</div>
+	
+				<div class="Box-mainContance_Function-Link_box" id="Box-mainContance_Function-LinkD"
+					 style="top:-60px">
+					<span style="top:0px;
+								 left: 0px;
+								 position: absolute;">功能D</span>
+				</div>
+	
+			</div>
+	
+			
+	
+		</header>
+
+	<!-- 整體Box -->
+	<div class = "Box-Body">
+
+		<!-- 主體內容 -->
+		<div class="Box-mainContance">
+
+			<!--主體背景-->
+			<div class="box-mainContance_imgBox"
+				 style="text-align:center;">
+				<img src="/static/images/web_images/pink_classical_hand_drawn_landscape_979789.jpg"
+					 id="box-mainContance_background-image">
+			</div>
+
+			<!-- 內容_LR -->
+			<div class="Box-mainContance_LR-box"
+				 id="Box-main_height">
+		
+				<!--背景圖-->
+				<div style="top:100px;
+							left: 40px;
+							position: relative;">
+					<img src="/static/images/web_images/blue_background_919872.jpg"
+						 id="Box-LoginBox-IMG">
+				</div>
+
+				<!--登入框-->	
+				<div class="Box-mainContance-LoginBox">
+
+					<p class="Font-LoginBox"
+					style="top:30px;
+							position: relative;">Sign Up</p>
+
+<!--用戶註冊---------------------------------------------------------------------------------->
+
+					<form name="form1" method="post" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+						<div class="Box-mainContance-LoginBox-Form_Registered"
+							id="Box-LoginBox-Form-Registered_NickName">
+{#							<!--名稱輸入-->#}
+
+                            {{ form.username }}
+                            {% if form.username.help_text %}
+                                <p>{{ form.username.help_text|safe }}</p>
+                            {% endif %}
+
+
+						</div>
+						
+						<div class="Box-mainContance-LoginBox-Form_Registered"
+							id="Box-LoginBox-Form-Registered_IDNumber">
+
+							<!--帳號輸入-->
+                            {{ form.image }}
+                            {% if form.image.help_text %}
+                                <p>{{ form.image.help_text|safe }}</p>
+                            {% endif %}
+{#							<input 	type="text" #}
+{#									name="account"#}
+{#									placeholder="ID Number"#}
+{#									class="Box-InputBox"#}
+{#									id="Box-InputBox_Registered_IDNumber">#}
+						</div>
+
+						<div class="Box-mainContance-LoginBox-Form_Registered"
+							id="Box-LoginBox-Form-Registered_Password">
+
+							<!--密碼輸入-->
+
+                            {{ form.password1 }}
+                            {% if form.password1.help_text %}
+                                <p>{{ form.password1.help_text|safe }}</p>
+                            {% endif %}
+{#
+						</div>
+
+						<div class="Box-mainContance-LoginBox-Form_Registered"
+							id="Box-LoginBox-Form-Registered_RePassword">
+
+							<!--重複輸入密碼-->
+
+                            {{ form.password2 }}
+                            {% if form.password2.help_text %}
+                                <p>{{ form.password2.help_text|safe }}</p>
+                            {% endif %}
+{#
+						</div>
+
+						<div class="Box-mainContance-LoginBox-Form_Registered"
+							id="Box-LoginBox-Form-Registered_Email">
+
+							<!--電子郵件輸入-->
+
+                            {{ form.email }}
+                            {% if form.email.help_text %}
+                                <p>{{ form.email.help_text|safe }}</p>
+                            {% endif %}
+{#
+						</div>
+
+						<div class="Box-mainContance-LoginBox-Form_Registered"
+							id="Box-LoginBox-Form-Registered_PhoneNumer">
+
+							<!--電話輸入-->
+
+                            {{ form.phone_number }}
+                            {% if form.phone_number.help_text %}
+                                <p>{{ form.phone_number.help_text|safe }}</p>
+                            {% endif %}
+{#							<input 	type="text" #}
+{#									name="phone"#}
+{#									placeholder="phone number"#}
+{#									class="box-inputbox"#}
+{#									id="box-inputbox_Registered_Phone">#}
+						</div>
+
+                        <script>
+
+                            if('{{ form.username.errors }}'!=="")
+                            {
+                               alert('{{ form.username.errors }}')
+                            }
+                            if('{{ form.password1.errors }}'!=="")
+                            {
+                                alert('{{ form.password1.errors }}')
+                            }
+                            if('{{ form.password2.errors }}'!=="")
+                            {
+                                alert('{{ form.password2.errors }}')
+                            }
+                            if('{{ form.email.errors}}'!=="")
+                            {
+                                alert('{{ form.email.errors}}')
+                            }
+                            if('{{ form.phone_number.errors }}'!=="")
+                            {
+                                alert('{{ form.phone_number.errors }}')
+                            }
+
+                        </script>
+						<div id="Box-LoginBox-Form_LoginButton-Location_Registered">
+
+							<!--登入按鈕-->
+							<input type="submit" 
+									name="registered"
+									value="Confirm"
+									class="Login_Buttom">
+						</div>
+					</form>
+
+					<!--底部-跳轉Login介面-->
+					<div class="Box-mainContance-LoginBox_Registered"
+						style="top:150px;">
+
+						<div class="Box-mainContance-LoginBox-Request"
+							style="height: 30px;">
+
+							<div class="Box-mainContance-Login-Request_Msg">
+								<p class="Font-ReturnLogin">Already have account?</p>
+							</div>
+
+							<div class="Box-mainContance-Login-Request_ReturnLogin-Box">
+								<p class="Font-ReturnLogin">
+									<a 	href="/account/login"
+										target="_self" 
+										style=" text-decoration:none;
+												color:blue;">Login in</a><!--連結位置待更新-->
+								</p>
+							</div>
+
+						</div>
+					</div>
+
+				
+
+<!--END of Login----------------------------------------------------------------------------->
+				</div><!--End of 登入框-->
+
+				<div class="Box-mainContance-LoginBox-Shadow"></div>
+				
+			</div>
+
+		</div>
+		
+
+		<!--底部功能-->
+		<div class="Box-Bottom">	
+			<!--回饋&功能欄-->
+			<div class="Box-Bottom_Index">
+				<div class="Box-Bottom_mainContance">
+					
+					<div class="Box-Bottom_mainContance-Box"
+							id="Box-Bottom_mainContance-Box_Location-A">
+
+						<div class="Box-Bottom-mainContance-text_Top-value">
+							<p class="Font-Bottom_information">Functions</p>
+						</div>
+						
+						<div class="Box-Bottom-mainContance-textContance_Top-value">
+							<p class="Font-Bottom_information-box">Func A</p>
+							<p class="Font-Bottom_information-box">Func B</p>
+							<p class="Font-Bottom_information-box">Func C</p>
+						</div>
+
+					</div>
+
+					<div class="Box-Bottom_mainContance-Box"
+							id="Box-Bottom_mainContance-Box_Location-B">
+
+						<div class="Box-Bottom-mainContance-text_Top-value">
+							<p class="Font-Bottom_information">About Us</p>
+						</div>
+
+						<div class="Box-Bottom-mainContance-textContance_Top-value">
+							<p class="Font-Bottom_information-box">四方狂想曲</p>
+						</div>
+
+					</div>
+
+					<div class="Box-Bottom_mainContance-Box"
+							id="Box-Bottom_mainContance-Box_Location-C">
+
+						<div class="Box-Bottom-mainContance-text_Top-value">
+							<p class="Font-Bottom_information">Support</p>
+						</div>
+
+						<div class="Box-Bottom-mainContance-textContance_Top-value">
+							<p class="Font-Bottom_information-box">Problems</p>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+			
+			<!--版權欄-->
+			<div class="Box-Bottom_CopyRight">
+				<div class="Box-Bottom_CopyRight-Box">
+					<p class="Font-CopyRight">COPYRIGHT（C）2019-2020</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	
+	
+</body>
+</html>

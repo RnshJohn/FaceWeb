@@ -1,0 +1,182 @@
+
+/*
+ *	style:  以名字定義		.
+ *	   id： 以編號定義		#
+ */
+
+	/*Testing font*/
+	.Stand-Font_Testing{
+		text-align: center;
+	
+		color : black;
+		font-family:宋体,Arial;
+		font-size: 50px;
+		
+		font-weight:normal; 
+		font-style:normal;
+	}
+	
+	.Font-LoginBox{
+		text-align: center;
+	
+		color : rgb(88, 94, 99);
+		font-family:宋体,Arial;
+		font-size: 50px;
+		
+		font-weight:normal; 
+		font-style:normal;
+	}
+
+	.Font-ForgotPW{
+		text-align: center;
+
+		font-family:宋体,Arial;
+		font-size: 17px;
+
+		font-weight:normal; 
+		font-style:normal;
+	}
+	
+	.Font-CreateNewCount{
+		text-align: center;
+
+		font-family:宋体,Arial;
+		font-size: 17px;
+
+		font-weight:normal; 
+		font-style:normal;
+	}
+
+	.Font-request{
+		text-align: center;
+
+		font-family:宋体,Arial;
+		font-size: 17px;
+
+		font-weight:normal; 
+		font-style:normal;
+	}
+
+	.Font-ReturnLogin{
+		text-align: center;
+
+		font-family:宋体,Arial;
+		font-size: 20px;
+		color : rgb(88, 94, 99);
+
+		font-weight:normal; 
+		font-style:normal;
+	}
+
+	.Font-Bottom_information{
+		text-align: left;
+
+		font-family:宋体,Arial;
+		font-size: 25px;
+		color : rgb(138, 145, 152);
+
+		font-weight:normal; 
+		font-style:normal;
+	}
+
+	.Font-Bottom_information-box{
+		text-align: left;
+
+		font-family:宋体,Arial;
+		font-size: 17px;
+		color : rgb(216, 218, 220);
+
+		font-weight:normal; 
+		font-style:normal;
+	}
+
+	.Font-CopyRight{
+		text-align: center;
+
+		font-family:宋体,Arial;
+		font-size: 20px;
+		color : rgb(138, 145, 152);
+
+		font-weight:normal; 
+		font-style:normal;
+	}
+
+	.Font-Home-Title{
+		text-align: center;
+
+		font-family:Arial;
+		font-size: 30px;
+		color : rgb(160, 160, 160);
+
+		font-weight:normal; 
+		font-style:normal;
+
+		top:25px;
+		position: absolute;
+	}
+
+	.Font-RoomList-Title{
+		text-align: center;
+
+		font-family:Arial;
+		font-size: 30px;
+		color : rgb(0, 0, 0);
+
+		font-weight:normal; 
+		font-style:normal;
+
+		top:0px;
+		position: absolute;
+	}
+
+	.Font-RoomList-Data{
+		text-align: center;
+
+		font-family:Arial;
+		font-size: 20px;
+		color : rgb(160, 160, 160);
+
+		font-weight:normal; 
+		font-style:normal;
+
+		top:0px;
+		position: absolute;
+	}
+
+	.Font-RoomList-Setting{
+		text-align: center;
+
+		font-family:Arial;
+		font-size: 20px;
+		color : rgb(160, 160, 160);
+
+		font-weight:normal; 
+		font-style:normal;
+
+		top:0px;
+		position: absolute;
+	}
+
+	/*Home*/
+	.Font-Box-RightContance-Group-TitleBox{
+		text-align: center;
+
+		font-family: Arial, serif;
+		font-size: 30px;
+		color : rgb(0, 0, 0);
+
+		font-weight:normal; 
+		font-style:normal;
+
+	}
+	.Font-Box-RightContance-Group-ContanceBox{
+		text-align: center;
+
+		font-family: Arial, serif;
+		font-size: 20px;
+		color : rgb(160, 160, 160);
+
+		font-weight:normal; 
+		font-style:normal;
+
+	}

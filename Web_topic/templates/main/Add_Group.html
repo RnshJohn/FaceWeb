@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 網站初始化&標題定義 -->
+	<title>情緒監控-創建群組介面</title>
+    <link rel="icon" href="/static/images/web_images/1607931345.ico" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="format-detection" content="telephone = no" />
+	<meta name="keywords"  content="專題討論" />
+	<meta name="description" content="" />
+
+
+
+	<!-- 快捷 & 收藏 圖標宣告 -->
+		<!--
+		<link 	rel="shortcut icon"
+				href=""
+				type="image/x-icon" />
+
+		<link 	rel="Bookmark"
+				href="" />
+		-->
+
+	<!-- CSS引用宣告 -->
+
+	<link href="/static/CSS/Box.css" rel="stylesheet" type="text/css" /><!--框架-->
+	<link href="/static/CSS/Font.css" rel="stylesheet" type="text/css" /><!--字體形-->
+
+
+	<!-- Js引用宣告 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script><!--移動效果-->
+	<script type="text/javascript" language="javascript" src="/static/JS/Move.js"></script><!--移動座標-->
+
+
+</head>
+
+<body>
+
+	<!-- 整體Box -->
+	<div class="Box-mainContance-Home">
+
+{#		<!--左側Box 已加入的組別-->#}
+{#		<div class="Box-LeftContance-Home">#}
+{#			<!--Logo-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube1">#}
+{#				 <div class="Box-LeftContance-Home_Logo"#}
+{#				 	  style="background-image: url('img/Our.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--紅點提示-->#}
+{#			<div class="Box-RedDot"#}
+{#				 id="Box-RedDotA"></div>#}
+{##}
+{#			<div class="Box-RedDot"#}
+{#				 id="Box-RedDotB"></div>#}
+{##}
+{#			<!--組別1-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube2">#}
+{#				 <div class="Box-LeftContance-Home_JoinInGroup"#}
+{#				 	  style="background-image: url('img/Group_Basketball.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--組別2-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube3">#}
+{#				 <div class="Box-LeftContance-Home_JoinInGroup"#}
+{#				 	  style="background-image: url('img/Group_Volleyball.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--組別3-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube4">#}
+{#				 <div class="Box-LeftContance-Home_JoinInGroup"#}
+{#				 	  style="background-image: url('img/Group_Tree.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--組別6-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube5">#}
+{#				 <div class="Box-LeftContance-Home_JoinInGroup"#}
+{#				 	  style="background-image: url('img/Group_Book.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--組別5-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube6">#}
+{#				 <div class="Box-LeftContance-Home_JoinInGroup"#}
+{#				 	  style="background-image: url('img/Group_Pen.png');#}
+{#					   		 background-size:100% 100%;">#}
+{#				 </div>#}
+{#			</div>#}
+{##}
+{#			<!--組別6-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube7">#}
+{#				 groupF#}
+{#			</div>#}
+{##}
+{#			<!--組別7-->#}
+{#			<div class="Box-LeftContance-Home_tableCube"#}
+{#				 id="Box-LeftContance-Home_tableCube8">#}
+{#				 groupA#}
+{#			</div>#}
+{##}
+{#		</div>#}
+
+		<!--右側Box-->
+		<div class="Box-RightContance-Home"><!--右側主體定義-->
+			<div class="Box-RightContance-Home_CenterBox"><!--固定內容版面&置中-->
+
+				<!--頂部Top-->
+				<div class="Box-RightContance-Home_Top"
+					 id="Box-RightContance-Home_Top">
+
+					<!--搜索欄-->
+					<div class="searchBox">
+						<form name="searchgroup" method="post" action="" enctype="multipart/form-data">
+							{% csrf_token %}
+                            <!--輸入欄-->
+							<input style="width: 300px; height: 50px; top: 17px; position: absolute;" type="text" placeholder="   Search Group Name or ID to join in" name="groupname"
+								style=" width: 300px;
+										height:20px;
+										top:5px;
+										left: 0px;
+										position:absolute;">
+							<!--按鈕 -->
+							<button type="submit" name ="search" class ="button"
+									style="
+										top: 17px;
+										left: 320px;
+										position:absolute;">submit</button>
+						</form>
+
+					</div>
+                    <div style="top: 16px;
+				              left: 570px;
+				              position: absolute;
+				              font-size: x-large;
+				              width: 120px;
+				              height: 40px;">
+                        <a class="button"
+                       href="{% url 'main:user-page' %}">Home</a>
+                    </div>
+
+					<!--設置選項按鈕-->
+                   	<div style="display: block;
+                                position: absolute;
+                                top: 46px;
+                                left: 787px;
+                                transform: translate(-50%, -50%);">
+                         <a href="{% url 'main:add-group' %}" class="button">ADD-GROUP</a>
+                    </div>
+
+					<!--profile按鈕-->
+                    <div style="top: 16px;
+				              left: 875px;
+				              position: absolute;
+				              font-size: x-large;
+				              width: 120px;
+				              text-decoration: none;
+				              height: 40px;">
+                        <a class="button"
+                       href="{% url 'main:profile_update' %}"> Hi~{{ user.username }}</a>
+                    </div>
+
+{#                    登出按鈕#}
+                     <div style="top: 16px;
+				              left: 1062px;
+				              position: absolute;
+				              font-size: x-large;
+				              width: 180px;
+				              height: 40px;">
+                         <a href="{% url 'main:logout' %}" class="button">LOG-OUT</a>
+                    </div>
+
+                    <img class="Box-RightContance-Home_SettingButton"
+                         src="/static{{ image.image.url }}" style="background-size: 100% 100%; border-radius: 50%;">
+
+				</div>
+
+				<!--水平分割線-->
+				<div class="Box-hr" id="Box-hrA"></div>
+
+				<!--分組標題box-->
+				<div class="Box-RightContance-Home_Title"
+					 id="Box-RightContance-Home_TitleA">
+
+					<!--標題A-->
+					<span class="Font-Home-Title">FROM YOUR PICKS</span>
+					<span	class="Font-Home-Title"
+							style="font-size:50px;
+								   top:13px;
+								   left:290px;"> > </span>
+
+					<!--最新&熱門按鈕-->
+
+					<!--最新組別-->
+					<div class="Box-RightContance-Home_shortCut"
+						 id="Box-RightContance-Home_shortCut-NewGroup"
+						 style="background-image: url('img/NewGroup.png');
+								 background-size:100% 100%;"></div>
+
+					<!--熱門組別-->
+					<div class="Box-RightContance-Home_shortCut"
+						 id="Box-RightContance-Home_shortCut-HotGroup"
+						 style="background-image: url('img/HotGroup.png');
+								background-size:100% 100%;"></div>
+
+				</div>
+
+				<!--主要內容A-Box -->
+				<div class="Box-RightContance-Group"
+                     id="Box-RightContance-GroupA">
+                    <form name="form1" method="post" action="" enctype="multipart/form-data">
+        <!--Group 名稱-->
+        {% csrf_token %}
+        {{ form.groupname}}
+        {% if form.groupname.help_text %}
+            <p>{{ form.groupname.help_text|safe }}</p>
+        {% endif %}
+
+        <!--Group Image-->
+        {{ form.groupImage}}
+        {% if form.groupImage.help_text %}
+            <p>{{ form.groupImage.help_text|safe }}</p>
+        {% endif %}
+
+        <!--Group Password-->
+        {{ form.password1}}
+        {% if form.password1.help_text %}
+            <p>{{ form.password1.help_text|safe }}</p>
+        {% endif %}
+
+
+        <!--password2-->
+        {{ form.password2}}
+        {% if form.password2.help_text %}
+            <p>{{ form.password2.help_text|safe }}</p>
+        {% endif %}
+
+        <input  type="submit"
+                name="registeredGroup"
+                style="top: 250px; left: 57px"
+                value="Comfirm"
+                class="button">
+    </form>
+
+    <script>
+
+        if('{{ form.groupname.errors }}'!=="")
+        {
+            alert('{{ form.groupname.errors }}')
+        }
+        if('{{ form.password1.errors }}'!=="")
+        {
+            alert('{{ form.password1.errors }}')
+        }
+        if('{{ form.password2.errors }}'!=="")
+        {
+            alert('{{ form.password2.errors }}')
+        }
+        {% if messages%}
+        {% for msg in messages %}
+            alert('{{ msg.message }}');
+        {% endfor %}
+        {% endif %}
+
+
+
+    </script>
+
+
+
+                </div>
+
+				<!--水平分割線-->
+				<div class="Box-hr" id="Box-hrB"></div>
+
+				<!--分組標題box-->
+				<div class="Box-RightContance-Home_Title"
+					 id="Box-RightContance-Home_TitleB">
+				<!--標題B-->
+					<span class="Font-Home-Title">FROM YOUR PICKS</span>
+					<span	class="Font-Home-Title"
+							style="font-size:50px;
+									top:13px;
+									left:290px;"> > </span>
+
+				</div>
+
+				<div class="Box-RightContance-Group"
+					 id="Box-RightContance-GroupB">
+					<span style="text-align: center;
+								 font-size: 50px;">More Information, Stay tuned！</span>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+</body>
+</html>
